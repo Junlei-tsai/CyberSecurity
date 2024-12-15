@@ -1,0 +1,769 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資訊安全與網路系統安全</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="plugins/codemirror/theme/monokai.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE1();" class="nav-link">對稱式加密 – AES 演算法(區塊加密)</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class  with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    古典密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./1-1SubstitutionCipher.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>替換式密碼</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-2BruteForceCracking.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>暴力破解法</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-3FrequencyAnalysis.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>頻率分析</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    現代密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="./2-1SymmetricEncryption.html" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>XOR 運算</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="2-2AesAlgorithm.html" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>AES 演算法</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview menu-open">
+                                <li class="nav-item menu-open">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                        <p>
+                                            非對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview menu-open">
+                                        <li class="nav-item">
+                                            <a href="./1-5-1PublicAndPrivateKey.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>公私鑰概念</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="./1-5-2Algorithm.html" class="nav-link active">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>RSA 演算法</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>數位簽章</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 id="PAGE1_title" class="m-0">非對稱式加密 - 使用RSA演算法完成加解密 (1) </h1>
+                            <h1 id="PAGE2_title" class="m-0" hidden>非對稱式加密 - 使用RSA演算法完成加解密 (2) </h1>
+                            <h1 id="PAGE3_title" class="m-0" hidden>非對稱式加密 - 使用RSA演算法完成加解密 (3) </h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <section id="PAGE1_section" class="col-lg-12">
+                            <div class="col-lg-12">
+                                <span>Alice想傳送訊息給Bob，但Bob尚未擁有公鑰、私鑰。</span>
+                            </div>
+                            <br />
+                            <div class="col-lg-12">
+                                <h4>第一步（接收方視角）：Bob 產生公鑰及私鑰，並將公鑰發布於公開的網際網路中。</h4>
+                            </div>
+                            <div class="col-lg-12">
+                                <span>金鑰長度越長，越可以減少被破解的機會，典型的 RSA 金鑰大小為 1,024 或 2,048 或 4,096 位元。</span>
+                            </div>
+                            <div class="col-lg-12">
+                                <span>請選擇任一金鑰長度後，分別將兩塊程式碼拼圖拖曳正確的虛框中。</span>
+                            </div>
+                            <br />
+                            <div class="col-lg-12">
+                                <select name="RSA_length" class="form-control" style="width: auto" onchange="show_length()">
+                                    <option value="">請選擇</option>
+                                    <option value="1024">1,024</option>
+                                    <option value="2048">2,048</option>
+                                    <option value="4096">4,096</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/BOB1.png" />
+                                    <span>Bob寫程式產生公私鑰</span>
+                                </div>
+                                <div class="col-lg-12" style="background-color: antiquewhite;">
+                                    <span>
+                                        實際上可以藉由軟體操作產生公私鑰，省去親手寫程式的步驟。<br /><br />
+                                        例如： Kleopatra 加解密軟體。
+                                    </span>
+                                    <img class="img-fluid" src="./image/u1-5/kleopatra_logo.png" />
+                                </div>
+                            </div>
+                            <!--第一步-->
+                            <div class="col-8">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <span>from Crypto.PublicKey import RSA</span><br />
+                                            <span># 產生 1024、2048或4096 位元 RSA 金鑰</span><br />
+                                            <span>key = RSA.generate(</span>
+                                            <span id="show_length"></span>
+                                            <span>)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="img-fluid" src="./image/u1-5/PRkey_B.png" /><span>產生Bob</span><span style="color: red;">私</span><span>鑰</span></td>
+                                        <td><div><section class="col-lg-12 connectedSortable" id="img_Encryption" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width:50px;"></section></div></td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                    <tr>
+                                        <td><img class="img-fluid" src="./image/u1-5/PBkey_B.png" /><span>產生Bob</span><span style="color: red;">公</span><span>鑰</span></td>
+                                        <td><div><section class="col-lg-12 connectedSortable" id="img_Decrypt" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width: 50px;"></section></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <span>#看看印出的公私鑰，和.pem檔案中的內容是否一樣</span><br />
+                                            <span>print('private.pem檔案中的內容為:\n',privateKey.decode('utf-8'))</span><br />
+                                            <span>print('\npublic.pem檔案中的內容為:\n’,publicKey.decode('utf-8'))</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="button" value="執行程式" onclick="RUNCode()" />
+                            </div>
+                            <!--拖曳區-->
+                            <div class="col-2">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td colspan="2"><span>拖曳區：程式碼拼圖</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <span id="Alice_public">
+                                                                privateKey = key.export_key()<br />
+                                                                with open("private.pem", "wb") as f:<br />
+                                                                f.write(privateKey)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <span id="Alice_public">
+                                                                publicKey =　key.publickey().export_key()<br />
+                                                                with open("public.pem", "wb") as f:<br />
+                                                                f.write(publicKey)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!--步驟一 執行結果-->
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/BOB1.png" />
+                                    <span>Bob的電腦產生兩個金鑰檔</span>
+                                </div>
+                                <div class="col-lg-12" style="background-color: antiquewhite;">
+                                    <img class="img-fluid" src="./image/u1-5/privatepem.png" />
+                                    <img class="img-fluid" src="./image/u1-5/publicpem.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="col-lg-12">
+                                    <span>執行結果：除了印出檔案內容外，Bob的本機端會產生private.pem、public.pem 兩個檔案。</span>
+                                </div>
+                                <div class="card card-outline card-info">
+                                    <!-- /.card-header -->
+                                    <div class="card-body p-0">
+                                        <textarea id="codeMirrorDemo" class="p-3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--步驟二-->
+                            <div class="col-lg-12">
+                                <h4>第二步（接收方視角）：Bob 將金鑰發布於公開的網際網路中。</h4>
+                            </div>
+                            <div class="col-lg-12">
+                                <span>咦？現在Bob有公鑰及私鑰，他要發布哪份金鑰檔呢？</span>
+                            </div>
+                            <div class="col-lg-12">
+                                <span>在此以「雲朵」表示公開的網際網路，請將正確的金鑰檔拖曳至雲朵中央，表示發布至公開網際網路。</span>
+                            </div>
+                            <br />
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/BOB1.png" />
+                                    <span>Bob要將哪份金鑰檔發布於公開的網際網路中呢?</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <img class="img-fluid" src="./image/u1-5/cloud1.png" />
+                                <div class="col-lg-12" style="border: 2px black solid;">
+                                    <section class="col-lg-12 connectedSortable" id="" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width: 50px;"></section>
+                                </div>
+                                <img class="img-fluid" src="./image/u1-5/text1.png" />
+                                <input type="button" value="上傳至公開的網際網路中" onclick="Transmit();" />
+                                <span id="TransmitANS"></span>
+                            </div>
+                            <!--拖曳區 檔案-->
+                            <div class="col-2">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td colspan="2"><span>拖曳區：Bob目前擁有的金鑰檔</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <img class="img-fluid" src="./image/u1-5/privatepem.png" />
+                                                            <span id="privatepem"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <img class="img-fluid" src="./image/u1-5/publicpem.png" />
+                                                            <span id="privatepem"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <input type="button" value="下一頁" onclick="NextPage('2');" />
+                        </section>
+
+
+                        <section id="PAGE2_section" class="col-lg-12"hidden>
+                            <div class="col-lg-12">
+                                <span>Alice取得Bob的公鑰，撰寫明文後加密檔案，傳送給Bob。</span>
+                            </div>
+                            <br />
+                            <div class="col-lg-12">
+                                <h4>第一步（傳送方視角）： Alice於公開的網際網路中取得Bob的公鑰。</h4>
+                            </div>
+                            <br />
+                            <!--第一步（傳送方視角）-->
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Alice.png" />
+                                    <span>Alice取得Bob公鑰</span>
+                                    <img class="img-fluid" src="./image/u1-5/publicpem.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <img class="img-fluid" src="./image/u1-5/cloud2.png" />
+                            </div>
+
+
+                            <div class="col-lg-12">
+                                <h4>第二步（傳送方視角）： Alice 撰寫明文並使用公鑰加密為檔案。</h4>
+                            </div>
+                            <!--第二步（傳送方視角）-->
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Alice.png" />
+                                    <span>Alice寫程式加密檔案</span>
+                                </div>
+                                <div class="col-lg-12" style="background-color: antiquewhite;">
+                                    <span>
+                                        實際上，你可以使用其他軟體來加密文件，而不需要親自撰寫程式碼。<br /><br />
+                                        例如： Kleopatra 加解密軟體。
+                                    </span>
+                                    <img class="img-fluid" src="./image/u1-5/kleopatra_logo.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <span>from Crypto.PublicKey import RSA</span><br />
+                                            <span>from Crypto.Cipher import PKCS1_OAEP</span><br />
+                                            <span>import base64</span><br />
+                                            <span># 將明文存入二進位檔案中</span><br />
+                                            <span>with open("encrypted_data.bin", "wb") as f:</span><br />
+                                            <span># 輸入欲傳遞的訊息(限英數文字)</span><br />
+                                            <span>message = b’This is my secret.’</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="img-fluid" src="./image/u1-5/PBkey_B2.png" /><span>讀取Bob公鑰</span></td>
+                                        <td><div><section class="col-lg-12 connectedSortable" id="" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width:50px;"></section></div></td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                    <tr>
+                                        <td><img class="img-fluid" src="./image/u1-5/encrypt_flow.png" /></td>
+                                        <td><div><section class="col-lg-12 connectedSortable" id="" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width: 50px;"></section></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <span>f.write(ciphertext)</span><br />
+                                            <span>print(base64.b64encode(ciphertext))</span><br />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="button" value="執行程式" onclick="RUNCode()" />
+                            </div>
+                            <!--拖曳區-->
+                            <div class="col-2">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td colspan="2"><span>拖曳區：程式碼拼圖</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <span id="Alice_public">
+                                                                # 使用 PKCS1_OAEP 模組，透過金鑰變數(key)建立一個加密器(cipher)。<br />
+                                                                cipher = PKCS1_OAEP.new(key)<br />
+                                                                ciphertext = cipher.encrypt(message)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <span id="Alice_public">
+                                                                key = RSA.importKey(open('public.pem').read())
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Alice.png" />
+                                    <span>Alice的電腦產生密文檔</span>
+                                    <img class="img-fluid" src="./image/u1-5/encrypted_data.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="col-lg-12">
+                                    <span>執行結果(Alice 的本機端會產生名為「encrypted_data.bin 」的密文檔，並印出該檔內容):</span>
+                                </div>
+                                <div class="card card-outline card-info">
+                                    <!-- /.card-header -->
+                                    <div class="card-body p-0">
+                                        <textarea id="codeMirrorDemo" class="p-3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <h4>第三步（傳送方視角）： Alice 將密文檔傳送給Bob。</h4>
+                            </div>
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Alice.png" />
+                                    <span>Alice傳送密文檔給Bob</span>
+                                    <img class="img-fluid" src="./image/u1-5/encrypted_data.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/BOB2.png" />
+                                </div>
+                            </div>
+                            <input type="button" value="上一頁" onclick="NextPage('1');" />
+                            <input type="button" value="下一頁" onclick="NextPage('3');" />
+                        </section>
+
+
+                        <section id="PAGE3_section" class="col-lg-12" hidden>
+                            <div class="col-lg-12">
+                                <h4>第一步（接收方視角）： Bob 使用私鑰解密檔案，印出明文。</h4>
+                            </div>
+                            <div class="col-lg-12">
+                                <span>請從右方拖曳區選擇一個符合該行程式碼的執行動作，以完成解密。</span>
+                            </div>
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Bob1.png" />
+                                    <span>Bob寫程式解密檔案</span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/privatepem.png" />
+                                    <img class="img-fluid" src="./image/u1-5/publicpem.png" />
+                                </div>
+                                <div class="col-lg-12" style="background-color: antiquewhite;">
+                                    <span>
+                                        實際上，你可以使用其他軟體來解密文件，而不需要親自撰寫程式碼。<br /><br />
+                                        例如： Kleopatra 加解密軟體。
+                                    </span>
+                                    <img class="img-fluid" src="./image/u1-5/kleopatra_logo.png" />
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td>
+                                            <div><section class="col-lg-12 connectedSortable" id="" style="padding-left: 0px; padding-right: 0px; min-height: 50px; min-width:50px;"></section></div>
+                                            <img class="img-fluid" src="./image/u1-5/decrypt_flow.png" />
+                                        </td>
+                                        <td>
+                                            <span>
+                                                from Crypto.PublicKey import RSA<br />
+                                                from Crypto.Cipher import PKCS1_OAEP<br />
+                                                <br />
+                                                # 從encrypted_data.bin檔案讀取密文內容<br />
+                                                with open("encrypted_data.bin", "rb") as f:<br />
+                                                ciphertext = f.read(-1)<br />
+                                                <br />
+                                                key = RSA.importKey(open('private.pem').read())<br />
+                                                <br />
+                                                # 使用 PKCS1_OAEP 模組，透過金鑰變數(key)建立一個解密器(cipher)。<br />
+                                                cipher = PKCS1_OAEP.new(key)<br />
+                                                message = cipher.decrypt(ciphertext)<br />
+                                                <br />
+                                                print(message.decode("utf-8"))
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="button" value="執行程式" onclick="RUNCode()" />
+                            </div>
+                            <div class="col-2">
+                                <table class="col-lg-12" border="1">
+                                    <tr>
+                                        <td colspan="2"><span>拖曳區：程式碼拼圖</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <img class="img-fluid" src="./image/u1-5/PRkey_B.png" /><span>讀取Bob</span><span style="color: red;">私</span><span>鑰</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                        <td>
+                                            <div>
+                                                <section class="col-lg-12 connectedSortable" style="padding-left: 0px; padding-right: 0px; min-height: 50px;">
+                                                    <!-- Calendar -->
+                                                    <div class="col-lg-12 card bg-gradient-info" style="padding-left: 0px; padding-right: 0px;">
+                                                        <div class="card-header border-0">
+                                                            <img class="img-fluid" src="./image/u1-5/PBkey_B2.png" /><span>讀取Bob</span><span style="color: red;">私</span><span>鑰</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card -->
+                                                </section>
+                                            </div>
+                                        </td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-2">
+                                <div class="col-lg-12">
+                                    <img class="img-fluid" src="./image/u1-5/Bob1.png" />
+                                    <span>Bob得知明文</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="col-lg-12">
+                                    <span>執行結果:</span>
+                                </div>
+                                <div class="card card-outline card-info">
+                                    <!-- /.card-header -->
+                                    <div class="card-body p-0">
+                                        <textarea id="codeMirrorDemo" class="p-3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" value="上一頁" onclick="NextPage('2');" />
+                        </section>
+                        <!-- /.Left col -->
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="dist/js/demo.js"></script>-->
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- CodeMirror -->
+    <script src="plugins/codemirror/codemirror.js"></script>
+    <script src="plugins/codemirror/mode/css/css.js"></script>
+    <script src="plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    show();
+    
+    function show_length() {
+        var select_length = $("select[name='RSA_length']").val();
+        var show_length = document.getElementById("show_length");
+        show_length.innerHTML = select_length;
+    }
+
+    //執行按鈕
+    function RUNCode() {
+        //產生資料字串和檔案
+
+
+        //設定要顯示位置的內容
+        var codeMirrorDemo = document.getElementById("codeMirrorDemo");
+        codeMirrorDemo.innerHTML = "123"; //把字串換成執行完要顯示的結果
+        show();
+    }
+
+    //傳送按鈕
+    function Transmit() {
+
+        var TransmitANS = document.getElementById("TransmitANS");
+        if (true) {  //判斷是否傳送成功
+            TransmitANS.innerHTML = "正確";
+            TransmitANS.style.color = "green";
+        } else {
+            TransmitANS.innerHTML = "錯誤";
+            TransmitANS.style.color = "red";
+        }
+        TransmitANS
+    }
+
+    //上下頁切換
+    function NextPage(page) {
+        //看是否需要新增其他條件才能成功執行換頁
+        if (true) {
+            var PAGEsection_hiden, PAGEtitle_hiden;
+            for (var i = 1; i <= 3; i++) {
+                PAGEsection_hiden = document.getElementById("PAGE" + i + "_section");
+                PAGEtitle_hiden = document.getElementById("PAGE" + i + "_title");
+                PAGEsection_hiden.hidden = true;
+                PAGEtitle_hiden.hidden = true;
+            }
+            var PAGEsection_show = document.getElementById("PAGE" + page + "_section");
+            var PAGEtitle_show = document.getElementById("PAGE" + page + "_title");
+            PAGEsection_show.hidden = false;
+            PAGEtitle_show.hidden = false;
+            show();
+        }
+    }
+
+    function show() {
+        // Summernote
+        $('#summernote').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    }
+</script>

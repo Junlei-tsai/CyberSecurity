@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資訊安全與網路系統安全</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="plugins/codemirror/theme/monokai.css">
+    <style>
+        .CodeMirror {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE1();" class="nav-link">替換式密碼 – 練習加密</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE2();" class="nav-link">替換式密碼 – 訊息加解密</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class  with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link menu-open">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    古典密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./1-1SubstitutionCipher.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>替換式密碼</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-2BruteForceCracking.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>暴力破解法</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-3FrequencyAnalysis.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>頻率分析</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    現代密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="./2-1SymmetricEncryption.html" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>XOR 運算</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="2-2AesAlgorithm.html" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>AES 演算法</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link ">
+                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                        <p>
+                                            非對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>公私鑰概念</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>RSA 演算法</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>數位簽章</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 id="PAGE1_title" class="m-0">替換式密碼 – 練習加密</h1>
+                            <h1 id="PAGE2_title" class="m-0" hidden>替換式密碼 – 訊息加解密</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <div class="col-lg-12">現在，請拖動"藍色的字母方塊"至密文方框中，如此一來，明文字母將轉換為相應的密文字母。<br>完成後按下「送出」，確保文章中的字母都已經過加密。
+                        </div>
+                        <section id="" class="col-lg-8 content">
+                            <div class="container-fluid">
+                                <!-- Main row -->
+                                <div class="row">
+                                    <!-- Left col -->
+                                    <section id="PAGE1_section" class="col-lg-12">
+                                        <div class="container">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-lg-12 p-3">
+                                                        <table border="0" style="text-align:center;">
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="mt-3" style="width: 40px;"> 明文字母 </p>
+                                                                </td>
+                                                                <td>
+                                                                    <table>
+                                                                        <tr id="Letter-row">
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="mt-3" style="width: 40px;">密文字母</p>
+                                                                </td>
+                                                                <td>
+                                                                    <table border="1">
+                                                                        <tr id="data-row2">
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <hr>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span></span>
+                                                                </td>
+                                                                <td>
+                                                                    <table>
+                                                                        <tr id="data-row3">
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="border p-3" style="background: white;">
+                                                        <table border="0">
+                                                            <tr id="text_row0" style="height: 28px;"></tr>
+                                                            <tr id="ans_row0" style="height: 28px;"></tr>
+                                                            <tr id="text_row1" style="height: 28px;"></tr>
+                                                            <tr id="ans_row1" style="height: 28px;"></tr>
+                                                            <tr id="text_row2" style="height: 28px;"></tr>
+                                                            <tr id="ans_row2" style="height: 28px;"></tr>
+                                                            <tr id="text_row3" style="height: 28px;"></tr>
+                                                            <tr id="ans_row3" style="height: 28px;"></tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-lg-5 pt-4">
+                                                        <input type="button" value="送出" onclick="SwitchLetter();" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                        </div>
+                                    </section>
+                                    <section id="PAGE2_section" class="col-lg-12" hidden>
+                                        <div>
+                                            <span>
+                                                請你在 <a href="https://colab.research.google.com/" target="_blank">Google Colab </a>建立 “1-1 Substitution Cypher.ipynb”，補足下方程式碼的空白部分，使執行結果如右圖所示。
+
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <span>
+                                                （因每人設定的密碼表不一定相同，在此加密訊息的結果僅供參考）<br>
+                                            </span>
+                                        </div>
+                                        <br />
+                                        <!-- ./row -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-outline card-info">
+                                                    <div class="card-header">
+                                                        <h3 class="card-title">
+                                                            1-1 Substitution Cypher.ipynb
+                                                        </h3>
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body p-0" style="height: 500px;">
+                                                        <textarea id="codeMirrorDemo" class="p-3">
+# 定義替換式密碼表
+substitution_dict = {
+    'a': 'q',
+    'b': 'w',
+    'c': 'e',
+    'd': 'r',
+    'e': 't',
+    'f': 'y',
+    'g': 'u',
+    'h': 'i',
+    'i': 'o',
+    'j': 'p',
+    'k': 'a',
+    'l': 's',
+    'm': 'd',
+    'n': 'f',
+    'o': 'g',
+    'p': 'h',
+    'q': 'j',
+    'r': 'k',
+    's': 'l',
+    't': 'z',
+    'u': 'x',
+    'v': 'c',
+    'w': 'v',
+    'x': 'b',
+    'y': 'n',
+    'z': 'm'
+}
+
+# 加密訊息
+def encrypt_message(message):
+    encrypted_message = ""
+    for letter in message.lower():
+        #若字元與密碼表相互對應，將字元加密(請補足程式碼)
+
+        #否則印出原本字元(請補足程式碼)
+
+    return encrypted_message
+
+# 解密訊息
+def decrypt_message(encrypted_message):
+    decrypted_message = ""
+    for letter in encrypted_message.lower():
+        #如果密文字元存在於密碼表中，將字元解密(請補足程式碼)
+
+        #否則印出原本字元(請補足程式碼)
+
+    return decrypted_message
+
+msg = "Hello World."
+print("原始訊息:",msg)
+print("加密訊息:",encrypt_message("Hello Wor@#."))
+print("解密訊息:",decrypt_message("itssg vgksr."))
+</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.col-->
+                                        </div>
+                                    </section>
+                                    <!-- /.Left col -->
+                                </div>
+                                <!-- /.row (main row) -->
+                            </div><!-- /.container-fluid -->
+                        </section>
+                        <!-- /.Left col -->
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="dist/js/demo.js"></script>-->
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- CodeMirror -->
+    <script src="plugins/codemirror/codemirror.js"></script>
+    <script src="plugins/codemirror/mode/css/css.js"></script>
+    <script src="plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    // 畫面切換
+    var PAGE1_section, PAGE2_section, data_article, count = 0;
+
+    function setTitleAndSection() {
+        PAGE1_section = document.getElementById("PAGE1_section");
+        PAGE2_section = document.getElementById("PAGE2_section");
+    }
+    function ClickPAGE1() {
+        setTitleAndSection();
+        PAGE1_section.hidden = false;
+        PAGE2_section.hidden = true;
+    }
+
+    function ClickPAGE2() {
+        setTitleAndSection();
+        PAGE1_section.hidden = true;
+        PAGE2_section.hidden = false;
+
+        if (count == 0) {
+            show();
+            count++;
+        }
+    }
+
+    var data = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+    //明文
+    var row1 = document.getElementById('Letter-row');
+    data.forEach(function (value) {
+        // 創建 <td> 元素
+        var td = document.createElement('td');
+
+        // 創建 <input> 元素
+        var input = document.createElement('input');
+        input.className = 'form-control';
+        input.style.width = '51px';
+        input.style.textAlign = 'center'
+        input.value = value;
+        input.disabled = true; // 禁用输入
+
+        // 将 <input> 添加到 <td>
+        td.appendChild(input);
+
+        // 将 <td> 添加到 <tr>
+        row1.appendChild(td);
+    });
+
+    //密文
+    var row2 = document.getElementById('data-row2');
+    data.forEach(function (value) {
+        var td = document.createElement('td');
+        var div = document.createElement('div');
+        div.style.width = '50px';
+
+        var section = document.createElement('section');
+        section.id = 'ExplicitLetter_' + value;
+        section.className = 'col-lg-12 connectedSortable';
+        section.style.paddingLeft = '0px';
+        section.style.paddingRight = '0px';
+        section.style.minHeight = '50px';
+
+        div.appendChild(section);
+        td.appendChild(div);
+        row2.appendChild(td);
+    });
+
+    //拖曳文字
+    var row3 = document.getElementById('data-row3');
+    data.forEach(function (value) {
+        var td = document.createElement('td');
+        var div = document.createElement('div');
+        div.style.width = '51px';
+
+        var section = document.createElement('section');
+        section.className = 'col-lg-12 connectedSortable';
+        section.style.paddingLeft = '0px';
+        section.style.paddingRight = '0px';
+        section.style.minHeight = '50px';
+
+        var cardDiv = document.createElement('div');
+        cardDiv.className = 'col-lg-12 card bg-gradient-info';
+        cardDiv.style.paddingLeft = '0px';
+        cardDiv.style.paddingRight = '0px';
+
+        var cardHeader = document.createElement('div');
+        cardHeader.className = 'card-header border-0';
+
+        var span = document.createElement('span');
+        span.id = 'Letter_' + value;
+        span.className = 'card-title';
+        span.textContent = value;
+
+        cardHeader.appendChild(span);
+        cardDiv.appendChild(cardHeader);
+        section.appendChild(cardDiv);
+        div.appendChild(section);
+        td.appendChild(div);
+        row3.appendChild(td);
+    });
+
+    //文章資料載入
+    var str = ["YOU HAVE TO BELIEVE IN", "YOURSELF. THAT’S THE", "SECRET OF SUCCESS.", "BY CHARLES CHAPLIN"];
+
+    window.onload = function () {
+        for (var i = 0; i < str.length; i++) {
+            var data = str[i].split('');
+            ShowText(data, "text_row" + i, "ans_row" + i);
+        }
+    };
+
+
+    function ShowText(data, place_show, place_ans) {
+        var show_row = document.getElementById(place_show);
+        var ans_row = document.getElementById(place_ans);
+        data.forEach(function (value) {
+            // 創建 <td> 元素
+            var td1 = document.createElement('td');
+            td1.style.textAlign = 'center'
+            td1.style.width = '50px'
+
+            // 創建 <input> 元素
+            var span1 = document.createElement('span');
+            span1.style.width = '50px';
+            span1.innerHTML = value;
+
+            // 将 <input> 添加到 <td>
+            td1.appendChild(span1);
+
+            // 将 <td> 添加到 <tr>
+            show_row.appendChild(td1);
+
+
+
+            // 創建 <td> 元素
+            var td2 = document.createElement('td');
+            td2.style.textAlign = 'center'
+            td2.style.width = '50px'
+
+            // 創建 <input> 元素
+            var span2 = document.createElement('span');
+            span2.className = "ans_" + value;
+            span2.style.color = 'blue';
+            if (value == "" || value == ".") {
+                span2.innerHTML = value;
+            }
+            if(isLetter(value)){
+                span2.innerHTML = '_';
+            }
+
+            // 将 <input> 添加到 <td>
+            td2.appendChild(span2);
+
+            // 将 <td> 添加到 <tr>
+            ans_row.appendChild(td2);
+        });
+    }
+
+    //判斷是否為字母
+    function isLetter(char) {
+        return /^[A-Za-z]$/.test(char);
+    }
+
+    //交換文字
+    function SwitchLetter() {
+        var sections = document.querySelectorAll("section[id^='ExplicitLetter_']");
+
+        var sectionIds = [];
+        var spanValues = [];
+        console.log('sections:', sections);
+        sections.forEach(function (section) {
+            sectionIds.push(section.id);
+            var span = section.querySelector('span');
+            var spanValue = span ? span.textContent : '*';
+            spanValues.push(spanValue);
+        });
+        console.log('Section IDs:', sectionIds);
+        console.log('Span Values:', spanValues);
+
+        var count = 0;
+        data.forEach(function (letter) {
+            var classname = "ans_" + letter;
+            var spans = document.querySelectorAll('span.' + classname);
+            spans.forEach(function (span) {
+                span.innerText = spanValues[count];
+            });
+            count++;
+        });
+    }
+
+    function show() {
+        // Summernote
+        $('#summernote').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    }
+</script>

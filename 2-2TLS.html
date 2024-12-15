@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資訊安全與網路系統安全</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="plugins/codemirror/theme/monokai.css">
+    <style>
+        .Icon_trasparent {
+             color: transparent;
+        }
+       .clickable {
+            cursor: pointer; /* 當滑鼠移到該圖示時顯示手型游標 */
+        }
+        .img-container{
+            position: relative;
+            display: inline-block;
+        }
+        .img-container .btn1 {
+          position: absolute; /* 絕對定位 */
+          top: 71.5%; /* 垂直居中 */
+          left: 70%; /* 水平居中 */
+          transform: translate(-50%, -50%); /* 修正居中偏移 */
+          padding: 4px 15px;
+          background-color: rgba(253, 113, 69, 1);
+          color: #fff;
+          border: none;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+        .img-container .btn1:hover, .btn2:hover{
+          background-color: rgba(253, 113, 69, 0.8); /* 滑鼠懸停效果 */
+        }
+        .col-8{
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .btn2 {
+            padding: 4px 15px;
+            background-color: rgba(253, 113, 69, 1);
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 6rem;
+            margin-bottom: 1rem;      
+        }
+        .btn3{
+            position: absolute; /* 絕對定位 */
+            top: 30%; /* 垂直居中 */
+            left: 90%; /* 水平居中 */
+            transform: translate(-50%, -50%); /* 修正居中偏移 */
+        }
+        .dragdiv{
+            width: 140px;
+        }
+        .dragSession{
+            padding-left: 0px; padding-right: 0px; min-height: 118px;
+        }
+        .dragdiv_in{
+            padding-left: 0px; padding-right: 0px; width: 140px;
+        }
+        th, td {
+          border: none; /* 移除內部線條 */
+        }
+        .dragSession .card{
+            box-shadow: none;
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE1();" class="nav-link clickable">模擬線上購物</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE2();" class="nav-link clickable">加密交易資料</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a onclick="ClickPAGE3();" class="nav-link clickable">協議工作階段金鑰</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="1-1SubstitutionCipher.html" class="brand-link">
+                <img src="image/icon.png" alt="AdminLTE Logo" class="img-circle elevation-3 mr-1" style="opacity: .8;max-height: 33px;">
+                <span style="font-size: 1rem;">資訊安全與網路系統安全</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu(第一單元) -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class  with font-awesome or any other icon font library -->
+                        <div class="user-panel mt-1 pb-2 mb-3 d-flex text-center justify-content-center">
+                            <span class="text-white">單元一<br>資訊安全基本概念</span>
+                        </div>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    一、古典密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./1-1SubstitutionCipher.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>替換式密碼</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-2BruteForceCracking.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>暴力破解法</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./1-3FrequencyAnalysis.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>頻率分析</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    二、現代密碼學
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="./2-1SymmetricEncryption.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon Icon_trasparent"></i>
+                                                <p>XOR 運算</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="2-2AesAlgorithm.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon Icon_trasparent"></i>
+                                                <p>AES 演算法</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            非對稱式加密
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon Icon_trasparent"></i>
+                                                <p>公私鑰概念</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon Icon_trasparent"></i>
+                                                <p>RSA 演算法</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon Icon_trasparent"></i>
+                                                <p>數位簽章</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <div class="user-panel mt-1 pt-3 pb-2 mb-3 d-flex text-center justify-content-center" style="border-top: 1px solid #4b545c;">                            
+                            <span class="text-white">單元二<br>網路系統安全</span>
+                        </div>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    一、使用者身分鑑別
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./1-1SubstitutionCipher.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>通行密碼技術</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    二、安全交易機制
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./2-2TLS.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>TLS傳輸層安全性通訊協定</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header ml-2">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 id="PAGE1_title" class="m-0">模擬線上購物</h1>
+                            <h1 id="PAGE2_title" class="m-0" hidden>加密交易資料</h1>
+                            <h1 id="PAGE3_title" class="m-0" hidden>協議工作階段金鑰</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <section id="" class="col-lg-12 content">
+                            <div class="container-fluid">
+                                <!-- Main row -->
+                                <div class="row">
+                                    <!-- Left col -->
+                                    <section id="PAGE1_section" class="col-lg-12">
+                                        <div class="row">
+                                            <div class="img-container col-lg-8">
+                                                <img class="img-fluid" src="image/u2-2/shop.png" />
+                                                <button onclick="alert('我要跳到下一個畫面!!!!!!!!!!!!!!!!!!!!')" class="shadow btn1">立即購買</button>
+                                            </div>
+                                            <div class="col-lg-6 bg-white">
+                                                <img class="img-fluid" src="image/u2-2/shop2.png" />
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="card card-secondary col-8">
+                                                        <div class="card-header">
+                                                            <div class="card-title">
+                                                                請輸入您的信用卡資訊，以完成交易
+                                                            </div>
+                                                        </div>
+                                                        <form action="">
+                                                            <div class="card-body">
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-12">
+                                                                        <label for="creditId">信用卡號</label>
+                                                                        <input type="text" class="form-control" id="creditId" patterm="[0-9\s]" maxlength="19" size="19" placeholder="1111 1111 1111 1111">
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="form-row d-flex justify-content-between">
+                                                                    <div class="form-group col-4">
+                                                                        <label for="exp">有效期限</label>
+                                                                        <input type="text" class="form-control"  id="exp" maxlength="5" placeholder="MM/YY">
+                                                                    </div>
+                                                                    <div class="form-group col-4">
+                                                                        <label for="securityCode">安全碼</label>
+                                                                        <input type="text" class="form-control" id="securityCode" maxlength="3" size="3" placeholder="CVC">
+                                                                    </div>                                                                
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>                                       
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <button onclick="checkCreditCard()" class="btn2 shadow">送出</button>
+                                                </div>
+                                            </div>
+                                            <div class="img-container col-lg-6 d-flex align-items-center">
+                                                <img class="img-fluid" src="image/u2-2/creditCard.png" />
+                                            </div>
+                                            <div class="img-container col-lg-12 pt-1">
+                                                <img class="img-fluid" src="image/u2-2/shop_prompt.jpg" />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="PAGE2_section" class="col-lg-12" hidden>
+                                        <div class="col-lg-12">
+                                            <h5>觀察剛剛操作的購物網站(如下圖)，其網址為https開頭，代表受到了TLS 傳輸層安全性協定的保護。</h5>
+                                            <h5>現在我們來看看這些交易資料如何安全地在網路上傳輸吧！</h5>
+                                            <div class="col-lg-6 p-2">
+                                                <img class="img-fluid shadow-sm" src="image/u2-2/shop3.png" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br><span>➢ 試試看</span>
+                                            <br>
+                                            <span>你剛剛輸入的交易資料經過加密傳送至伺服器端了，過程如下方影片所示。你覺得這個傳輸過程可能是哪一種加密方式？</span>
+                                            <select id="ANS1">
+                                                <option selected>請選擇</option>
+                                                <option value="sym">對稱式加密</option>
+                                                <option value="asym">非對稱式加密</option>
+                                            </select>
+                                            <input type="button" value="送出" onclick="checkANS1('ANS1','showANS','tlsImg','tlsVideo');">
+                                            <span>&nbsp;&nbsp;答題狀況：</span><span id="showANS">尚未作答</span>
+                                            <br>
+                                            <span>※此處金鑰長度假設為128bits，因此金鑰內容為任意16字元。可返回 <a href="2-2AesAlgorithm.html" target="_blank">「現代密碼學－AES演算法」</a> 複習初始金鑰的設定。</span>
+                                            <div class="img-container col-lg-10 mt-3 mb-3" id="tlsImg" hidden="true">
+                                                <img class="img-fluid" src="image/u2-2/tls_pic.jpg" />
+                                                <input type="button" value="下一步" onclick="alert('我要跳到下一個畫面!!!!!!!!!!!!!!!!!!!!')" class="btn3">
+                                            </div>
+                                            <div class="embed-responsive embed-responsive-16by9 col-lg-10" id="tlsVideo">
+                                              <video class="embed-responsive-item" src="image/u2-2/tls.mp4" controls autoplay muted></video>
+                                            </div>                                            
+                                        </div>
+                                    </section>
+                                    <section id="PAGE3_section" class="col-lg-12" hidden>
+                                        <div class="col-lg-12">
+                                            <h5>其實，當用戶端嘗試與伺服器端已建立安全連線時，雙方便會透過 TLS 協定協議好「工作階段金鑰」，並非由外人產生。</h5>
+                                            <h5>假設現在雙方還沒協議好這個金鑰，目前處於請求連線的狀態，如下圖：</h5>
+                                            <div class="col-lg-6 d-flex justify-content-center">
+                                                <img class="img-fluid" src="image/u2-2/computer.png" />
+                                            </div>
+                                            <h5>我們一起來參與協議「工作階段金鑰」的過程，讓雙方建立連線。</h5>
+                                            <h5>注意，有些步驟被挖空了，請你想一想，幫忙拖曳正確的金鑰至相應的步驟中。</h5>
+                                            <div class="embed-responsive embed-responsive-16by9 col-lg-8 mt-3" id="tlsVideo">
+                                              <video class="embed-responsive-item" src="image/u2-2/tlsKey.mp4" controls autoplay muted></video>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table border="1" style="border-style: dashed;">
+                                                    <tr>
+                                                        <td colspan="4" class="text-center pt-2"><span>備註：公鑰後方的雲朵底圖，表示公鑰於網際網路中的公開性質。</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dragdiv">
+                                                                <section class="col-lg-12 connectedSortable dragSession cell">
+                                                                    <!-- Calendar -->
+                                                                    <div class="col-lg-12 card dragdiv_in">
+                                                                        <div class="card-header text-center">
+                                                                            <span id="pbkey_server">伺服器公鑰</span>
+                                                                            <img class="img-fluid" src="./image/u2-2/pbkey_server.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.card -->
+                                                                </section>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dragdiv">
+                                                                <section class="col-lg-12 connectedSortable dragSession cell">
+                                                                    <!-- Calendar -->
+                                                                    <div class="col-lg-12 card dragdiv_in">
+                                                                        <div class="card-header text-center">
+                                                                            <span id="prkey_server">伺服器私鑰</span>
+                                                                            <img class="img-fluid" src="./image/u2-2/prkey_server.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.card -->
+                                                                </section>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dragdiv">
+                                                                <section class="col-lg-12 connectedSortable dragSession cell">
+                                                                    <!-- Calendar -->
+                                                                    <div class="col-lg-12 card dragdiv_in">
+                                                                        <div class="card-header text-center">
+                                                                            <span id="key_work">工作階段金鑰</span>
+                                                                            <img class="img-fluid" src="./image/u2-2/key_work.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.card -->
+                                                                </section>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dragdiv">
+                                                                <section class="col-lg-12 connectedSortable dragSession cell">
+                                                                    <!-- Calendar -->
+                                                                    <div class="col-lg-12 card dragdiv_in">
+                                                                        <div class="card-header text-center">
+                                                                            <span id="key_work_en">加密後的<br>工作階段金鑰</span>
+                                                                            <img class="img-fluid" src="./image/u2-2/key_work_en.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.card -->
+                                                                </section>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br><span>➢ 試試看</span>
+                                            <div class="d-flex align-items-center col-lg-12">
+                                                Step 2. 沒問題，在此給你一張憑證，憑證能證明我就是shobee.tw網站的伺服器，並且包含&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step2"></section></div></td>  <!--min-width: 可以設定想放置答案位置的欄位位置最小大小-->
+                                                    </tr>
+                                                </table>
+                                                &nbsp;資訊。
+                                            </div>
+                                            <div class="d-flex align-items-center col-lg-12">
+                                                Step 3. 用戶端透過RSA演算法產生一把&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step3-1"></section></div></td>
+                                                    </tr>
+                                                </table>
+                                                &nbsp;，並將此金鑰使用&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step3-2"></section></div></td>
+                                                    </tr>
+                                                </table>
+                                                &nbsp;加密。
+                                            </div>
+                                            <div class="d-flex align-items-center col-lg-12">
+                                                Step 4. 將&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step4"></section></div></td>
+                                                    </tr>
+                                                </table>
+                                                &nbsp;傳遞給伺服器。
+                                            </div>
+                                            <div class="d-flex align-items-center col-lg-12">
+                                                Step 5. 伺服器端收到&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step5-1"></section></div></td>
+                                                    </tr>
+                                                </table>
+                                                &nbsp;後，使用&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step5-2"></section></div></td>
+                                                    </tr>
+                                                </table>
+                                                &nbsp;解密，得到未經加密的&nbsp;
+                                                <table border="1" style="display: inline-block;">
+                                                    <tr>
+                                                        <td><div class="dragdiv"><section class="col-lg-12 connectedSortable dragSession cell_ans" id="cell_step5-3"></section></div></td>
+                                                    </tr>
+                                                </table>。
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- /.Left col -->
+                                </div>
+                                <!-- /.row (main row) -->
+                            </div><!-- /.container-fluid -->
+                        </section>
+                        <!-- /.Left col -->
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="dist/js/demo.js"></script>-->
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- CodeMirror -->
+    <script src="plugins/codemirror/codemirror.js"></script>
+    <script src="plugins/codemirror/mode/css/css.js"></script>
+    <script src="plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    // 畫面切換
+    var PAGE1_section, PAGE2_section, PAGE3_section;
+
+    function setTitleAndSection() {
+        PAGE1_section = document.getElementById("PAGE1_section");
+        PAGE2_section = document.getElementById("PAGE2_section");
+        PAGE3_section = document.getElementById("PAGE3_section");
+    }
+    function ClickPAGE1() {
+        setTitleAndSection();
+        PAGE1_section.hidden = false;
+        PAGE2_section.hidden = true;
+        PAGE3_section.hidden = true;
+
+        PAGE1_title.hidden = false;
+        PAGE2_title.hidden = true;
+        PAGE3_title.hidden = true;
+    }
+
+    function ClickPAGE2() {
+        setTitleAndSection();
+        PAGE1_section.hidden = true;
+        PAGE2_section.hidden = false;
+        PAGE3_section.hidden = true;
+
+        PAGE1_title.hidden = true;
+        PAGE2_title.hidden = false;
+        PAGE3_title.hidden = true;
+    }
+    function ClickPAGE3() {
+        setTitleAndSection();
+        PAGE1_section.hidden = true;
+        PAGE2_section.hidden = true;
+        PAGE3_section.hidden = false;
+
+        PAGE1_title.hidden = true;
+        PAGE2_title.hidden = true;
+        PAGE3_title.hidden = false;
+    }
+    function checkCreditCard(){
+        let c_num = document.getElementById("creditId");
+        let c_exp = document.getElementById("exp");
+        let c_sec = document.getElementById("securityCode");
+        let c_numAns = "3234 7393 2719 8412";
+        let c_expAns = "08/29";
+        let c_secAns = "651";
+        if((c_num.value != c_numAns) || (c_exp.value != c_expAns) || (c_sec.value != c_secAns)){
+            alert('你輸入的信用卡錯誤！');
+        }else{
+            alert('我要跳到下一個畫面!!!!!!!!!!!!!!!!!!!!');
+        }
+        console.log(c_num.value);
+        console.log(c_num_ans);
+    }
+    document.getElementById("creditId").addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\s/g, "").replace(/\D/g, ""); // 移除空白與非數字字元
+        let spacedValue = "";
+
+        for (let i = 0; i < value.length; i++) {
+            if (i > 0 && i % 4 === 0) {
+                spacedValue += " "; // 每隔4個字元加空白
+            }
+            spacedValue += value[i];
+        }
+
+        e.target.value = spacedValue; // 更新輸入框的值
+    });
+
+    document.getElementById("exp").addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/[^\d/]/g, ""); // 移除空白與非數字字元、非/字元
+    });
+
+    document.getElementById("securityCode").addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, ""); // 移除空白與非數字字元
+    });
+    function checkANS1(id1,showId,showId2,hiddenId){
+        var ans1 = document.getElementById(id1);
+        var selectedValue = ans1.options[ans1.selectedIndex].value;
+        var show1 = document.getElementById(showId);
+        var show2 = document.getElementById(showId2);
+        var hidden1 = document.getElementById(hiddenId);
+        var outputstring;        
+        if (selectedValue != "sym") {
+            outputstring = "<span class='text-danger'>錯誤</span>";
+        }else{
+            outputstring = "<span class='text-success'>正確</span>";
+            show2.hidden = false;
+            hidden1.hidden = true;
+        }
+        show1.innerHTML = outputstring;
+    }
+    //Below is jQuery
+    $(function() {
+        $(".connectedSortable").sortable({
+            connectWith: ".connectedSortable",
+            receive: function(event, ui) {
+                // 獲取目標格子
+                const targetCell = $(ui.item).parent().closest('.connectedSortable');
+
+                // 檢查目標容器內是否已經有元素
+                const targetContainer = $(this);
+
+                // 如果目標容器內已有元素，則不出現能接受拖放的區域
+                if ((targetContainer.hasClass("cell_ans") && targetContainer.children().length > 1) || (ui.sender.hasClass("cell") && targetContainer.hasClass("cell"))) {
+                    $(ui.sender).sortable('cancel'); // 還原到原位置
+                }else if(ui.sender.hasClass("cell_ans") && targetContainer.hasClass("cell")){
+                    //刪除現在拖曳的元素
+                    ui.item.remove();
+                }else{
+                    if(ui.sender.hasClass("cell") && targetContainer.hasClass("cell_ans")){
+                        const originalItem = ui.item; // 被拖曳的元素
+                        const cloneItem = originalItem.clone(); // 複製元素
+                        $(ui.sender).append(cloneItem); // 將複製的元素放回起始位置
+                    }                    
+                }
+            }
+        }).disableSelection();
+    });
+    $(document).ready(function () {
+        setTitleAndSection();
+        PAGE1_section.hidden = true;
+        PAGE2_section.hidden = true;
+        PAGE3_section.hidden = false;
+
+        PAGE1_title.hidden = true;
+        PAGE2_title.hidden = true;
+        PAGE3_title.hidden = false;
+     });
+</script>
